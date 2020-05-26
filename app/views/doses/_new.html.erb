@@ -1,0 +1,13 @@
+
+<div class="container">
+
+<h1> Add new ingredient </h1>
+
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.input :description %>
+      <%= f.association :ingredient, :collection => Ingredient.all.order(:name) %>
+      <%= f.button :submit %>
+  <% end %>
+
+</div>
+

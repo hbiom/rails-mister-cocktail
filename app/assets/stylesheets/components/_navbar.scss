@@ -1,12 +1,20 @@
-.navbar-lewagon {
-  justify-content: space-between;
+
+.navbar-cocktail{
   background: white;
+  padding:20px;
+  overflow: hidden;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+
+.navbar-cocktail a {
+  color: blue;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+/* Change the color of links on hover */
+.navbar-cocktail a:hover {
+  background-color: blue;
+  color: black;
 }

@@ -6,8 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+Dose.destroy_all
 Ingredient.destroy_all
+Cocktail.destroy_all
+
 
 require 'json'
 require 'open-uri'
@@ -24,11 +26,25 @@ ingredient["drinks"].each do |value|
   Ingredient.create!(name: value["strIngredient1"])
 end
 
+mojito = Cocktail.new
 
-dose_mojito = Dose.new
+mojito = Cocktail.create!(name: "mojito")
 
-dose_mojito.cocktail = Cocktail.create(name: "mojito")
+Dose.create!(description: "3 feuilles",
+                          cocktail: mojito,
+                          ingredient: Ingredient.first)
 
-dose_mojito.description = Dose.create(description: "3 feuilles")
+# Dose.create!(description: "1 feuilles",
+#                           cocktail: mojito,
+#                           ingredient: Ingredient.first)
 
-dose_mojito.ingredient = Ingredient.first
+
+# Dose.create!(description: "6 cl",
+#                           cocktail: mojito.id,
+#                           ingredient: Ingredient.last)
+
+
+
+# Dose.create!(description: "3 feuilles",
+#                           cocktail: Cocktail.create(name: "sprite"),
+#                           ingredient: Ingredient.first)

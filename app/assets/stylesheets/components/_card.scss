@@ -1,0 +1,22 @@
+.card-cocktails {
+  height: 175px;
+  width: 175px;
+  background-image: url('https://source.unsplash.com/500x400/?cocktail');
+  background-size: cover;
+  background-position: center;
+  justify-content: space-evenly;
+  padding-left: 20px;
+}
+
+.coktails-menu {
+  display: flex;
+  justify-content: space-around;
+  // border: dashed blue;
+}
+
+
+.card-cocktails a {
+  color: white;
+  font-weight: bold;
+}
+
