@@ -1,6 +1,6 @@
 
 .navbar-cocktail{
-  background: white;
+  background: #4CAF50;
   list-style-type: none;
   height: 70px;
   padding-left: 20px;
@@ -24,7 +24,7 @@
 
 .navbar-cocktail a {
   background-color: #4CAF50; /* Green */
-  border: solid #4CAF50;
+  border: solid 1px white;
   color: white;
   text-align: center;
   text-decoration: none;
@@ -36,7 +36,7 @@
 /* Change the color of links on hover */
 .navbar-cocktail a:hover {
   background-color: white; /* Green */
-  border: solid #4CAF50;
+  border: solid 1px #4CAF50;
   color: #4CAF50;
   padding: 5px 10px;
   text-align: center;
