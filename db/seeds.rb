@@ -34,14 +34,10 @@ Dose.create!(description: "3 feuilles",
                           cocktail: mojito,
                           ingredient: Ingredient.first)
 
-# Dose.create!(description: "1 feuilles",
-#                           cocktail: mojito,
-#                           ingredient: Ingredient.first)
 
-
-# Dose.create!(description: "6 cl",
-#                           cocktail: mojito.id,
-#                           ingredient: Ingredient.last)
+Dose.create!(description: "6 cl",
+                          cocktail: mojito,
+                          ingredient: Ingredient.last)
 
 
 

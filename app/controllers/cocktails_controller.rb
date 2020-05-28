@@ -1,5 +1,20 @@
 class CocktailsController < ApplicationController
 
+
+
+  def self.search(search)
+    if search
+      cocktail = Cocktail.find.by(name: search)
+      if cocktail
+        self.where(cocktail_id: cocktail)
+      else
+        Cocktail.all
+      end
+    else
+      Cocktail.all
+    end
+  end
+
   def new
     @cocktail = Cocktail.new
   end
@@ -19,7 +34,9 @@ class CocktailsController < ApplicationController
     @cocktails = Cocktail.all
   end
 
-  def delete
+  def destroy
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.destroy
   end
 
   def edit
@@ -34,6 +51,6 @@ class CocktailsController < ApplicationController
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
 end

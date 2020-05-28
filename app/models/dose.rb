@@ -6,3 +6,4 @@ class Dose < ApplicationRecord
     validates :cocktail, uniqueness: { scope: :ingredient } # to meditate
 
 end
+

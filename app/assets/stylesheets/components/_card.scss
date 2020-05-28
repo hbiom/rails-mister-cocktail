@@ -1,22 +1,67 @@
-.card-cocktails {
-  height: 175px;
-  width: 175px;
-  background-image: url('https://source.unsplash.com/500x400/?cocktail');
-  background-size: cover;
-  background-position: center;
-  justify-content: space-evenly;
-  padding-left: 20px;
-}
-
 .coktails-menu {
   display: flex;
-  justify-content: space-around;
-  // border: dashed blue;
+  flex-wrap:wrap;
+  justify-content: center;
+}
+
+.grid {
+  position: relative;
+  top: -100px;
+}
+
+.col-4 {
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
 }
 
 
-.card-cocktails a {
+.card-cocktail{
+}
+
+
+.card-cocktail a {
   color: white;
   font-weight: bold;
 }
 
+.card-cocktail-image {
+  background-size: cover;
+  background-position: center;
+  height: 175px;
+  width: 200px;
+  justify-content: center;
+  padding:20px;
+  border-radius: 4px;
+  border-top-radius: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border: solid black;
+
+}
+
+.card-cocktail-info {
+  background-color: white;
+  color:#4CAF50;
+  font-weight:bold;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.card-cocktail-info {
+  background-color: #4CAF50;
+  font-weight:bold;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  display:inline-block;
+  height:80px;
+  width: 200px;
+  padding: 5px;
+}
+
+.card-cocktail-info span {
+  color:white;
+  font-weight:bold;
+  padding: 5px;
+  border-radius: 30px;
+  font-size:10px;
+}

@@ -1,23 +1,40 @@
 <div class="container">
 
-  <h1> <%=  @cocktail.name %> </h1>
+  <h1> <%=  @cocktail.name.capitalize() %> </h1>
 
-  <h1> <%  @cocktail.doses.each do |dose| %> </h1>
-    <table>
-        <thead>
-            <tr>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-              <td> <%= dose.ingredient.name  %></td>
-              <td> <%= dose.description %></td>
-            </tr>
-        </tbody>
-    </table>
-  <% end %>
+  <div class = "cocktail_recipe">
+    <%= cl_image_tag @cocktail.photo.key, width: 200, height: 175, crop: :fill %>
+    <div class = "tab">
+        <table>
+          <tbody>
+            <thead>
+              <th>Ingredient</th>
+              <th>Dose</th>
+            </thead>
+                <tr>
+                  <%  @cocktail.doses.each do |dose| %>
+                  <td> <%= dose.ingredient.name  %></td>
+                  <td> <%= dose.description %></td>
+              <td>
+                <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <i class="fa fa-trash destroy_dose"></i>
+                <% end %>
+              </td>
+<!--               <td>
+                <%= link_to cocktail_dose_path(dose) do %>
+                <i class="fas fa-pen-nib"></i>
+                <% end %>
+              </td> -->
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+  </div>
 
 </div>
+
+
 
 
 <%= render "doses/new", cocktail: @cocktail, dose: @dose %>

@@ -1,18 +1,26 @@
 
-
-
 <div class="container">
-  <h1>Cocktails</h1>
-  <p>Choose your poisons for tonight !</p>
-  <div class="coktails-menu">
-    <% @cocktails.each do |cocktail| %>
-      <div class="card-cocktails">
-        <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
-      </div>
-    <% end %>
+  <div class="mini-banner">
+    <p>Cocktails</p>
+    <p>Choose your poisons for tonight !</p>
   </div>
 
-
+  <div class="coktails-menu">
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-4 grid">
+      <div class="card-cocktail">
+        <div class="card-cocktail-image" style="background-image: url(<%=  cl_image_path(cocktail.photo.key)%>) "> <!-- Marche pas.... -->
+<!--           <%= cl_image_tag cocktail.photo.key, width: 200, height: 175, crop: :fill %>
+ -->          <%= link_to cocktail.name.capitalize(), cocktail_path(cocktail.id) %>
+          </div>
+        <div class="card-cocktail-info">
+          <% cocktail.doses.each do |dose| %>
+          <span> <%= dose.ingredient.name %> </span>
+          <% end %>
+       </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
-
 
