@@ -9,9 +9,8 @@
     <% @cocktails.each do |cocktail| %>
     <div class="col-4 grid">
       <div class="card-cocktail">
-        <div class="card-cocktail-image" style="background-image: url(<%=  cl_image_path(cocktail.photo.key)%>) "> <!-- Marche pas.... -->
-<!--           <%= cl_image_tag cocktail.photo.key, width: 200, height: 175, crop: :fill %>
- -->          <%= link_to cocktail.name.capitalize(), cocktail_path(cocktail.id) %>
+        <div class="card-cocktail-image" style="background-image: url(<%=  cl_image_path(cocktail.photo.attached? ? cocktail.photo.key : "p0ftganktxwljezmmzwr")%>) ">
+         <%= link_to cocktail.name.capitalize(), cocktail_path(cocktail.id) %>
           </div>
         <div class="card-cocktail-info">
           <% cocktail.doses.each do |dose| %>
